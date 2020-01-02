@@ -7,17 +7,17 @@
 
 # -------------------------------------------------------------------------
 
-source("S:/Biosci Bushfires/CERMB_LIBRARY/DATA/WEATHER/Avaliable BOM Station Data/using.R")
-using("leaflet", "geojsonio", "sf", "jsonlite")
+#source("S:/Biosci Bushfires/CERMB_LIBRARY/DATA/WEATHER/Avaliable BOM Station Data/using.R")
+#using("leaflet", "geojsonio", "sf", "jsonlite")
 
 #If using doesnt work, then run the following library commands
-#library(leaflet)
-#library(geojsonio)
-#library(sf)
-#library(jsonlite)
+library(leaflet)
+library(geojsonio)
+library(sf)
+library(jsonlite)
 
 #### ADD YOUR SITES HERE ###
-#sites <- read_sf("E:/Manuscripts/cwd_chrono/GIS", layer = "eli107")
+sites <- read_sf("E:/Manuscripts/cwd_chrono/GIS", layer = "eli107")
 
 
 geojson <- readLines("http://www.rfs.nsw.gov.au/feeds/majorIncidents.json", warn = FALSE) %>%
@@ -41,6 +41,6 @@ if(exists("sites") == FALSE){
 
 ##Used for converting firesnearme data to data frame and saving to alternate formats##
 
-#fires <- sf::st_read("http://www.rfs.nsw.gov.au/feeds/majorIncidents.json")
-#sum(st_area(fires))
-#st_write(obj = fires, "firesnearme.kml")
+# fires <- sf::st_read("http://www.rfs.nsw.gov.au/feeds/majorIncidents.json")
+# sum(st_area(fires))
+# st_write(obj = fires, "firesnearme_11_12.kml")
